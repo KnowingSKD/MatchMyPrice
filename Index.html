@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#4361ee" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="description" content="Compare prices across all major Indian retailers and save money">
+  <title>MatchMyPrice - Smart Price Comparison</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-container">
+        <img src="https://i.ibb.co/1YQWY2M1/IMG-20250419-WA0084.jpg" alt="MatchMyPrice Logo" class="logo-img" />
+        <h1 class="logo">MatchMyPrice</h1>
+      </div>
+      <p class="tagline">Compare prices across all major retailers and save money</p>
+    </header>
+
+    <main class="search-section">
+      <div class="search-card">
+        <div class="input-group">
+          <label for="category" class="input-label">
+            <i class="fas fa-tags"></i>
+            Product Category
+          </label>
+          <select id="category" class="form-select">
+            <option value="">All Categories</option>
+            <option value="mobile">📱 Mobile Phones</option>
+            <option value="laptop">💻 Laptops</option>
+            <option value="headphones">🎧 Headphones</option>
+            <option value="camera">📷 Cameras</option>
+            <option value="home">🏠 Home Appliances</option>
+            <option value="fashion">👕 Fashion</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="productInput" class="input-label">
+            <i class="fas fa-search"></i>
+            Product Name
+          </label>
+          <div class="search-box">
+            <input type="text" id="productInput" class="form-input" placeholder="e.g. iPhone 15, MacBook Pro..." 
+                   aria-label="Enter product name to compare prices" />
+            <button id="searchButton" class="search-button" aria-label="Compare Prices">
+              <span class="button-text">Compare</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="results" class="results-container">
+      <!-- Results will be dynamically inserted here -->
+    </div>
+
+    <div class="features-section">
+      <h2 class="section-title">Why Choose MatchMyPrice?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-percentage"></i>
+          <h3>Best Deals</h3>
+          <p>Find the lowest prices across all major retailers in India</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-bolt"></i>
+          <h3>Instant Results</h3>
+          <p>Get price comparisons in seconds with our powerful search</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-bell"></i>
+          <h3>Price Alerts</h3>
+          <p>Set alerts and get notified when prices drop</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+        <p class="copyright">
+          <i class="far fa-copyright"></i>
+          <span id="currentYear"></span> MatchMyPrice | Save on every purchase
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Price Alert Modal -->
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Set Price Alert</h2>
+      <p>Get notified when the price drops below your target amount</p>
+      <div class="form-group">
+        <label for="targetPrice">Target Price (₹)</label>
+        <input type="number" id="targetPrice" placeholder="Enter your desired price">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+      <button id="setAlertBtn" class="btn-primary">Set Alert</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="serviceWorker.js"></script>
+</body>
+</html>
